@@ -33,21 +33,19 @@ function RequestForm() {
         phone: phoneNumber,
         order: cxOrder,
       };
-
-      // .post("https://khanagi-server.onrender.com/sendData", data)
+      
       axios
-        .post("http://127.0.0.1:5050/sendData", data)
+        .post("https://khanagi-server.onrender.com/sendData", data)
         .then((response) => {
           console.log(response.status);
           if (response.status === 200) {
-            alert("Order submitted, thank you!")
+            alert("Order submitted, thank you!");
           }
 
           document.getElementById("fname").value = "";
           document.getElementById("email").value = "";
           document.getElementById("phone").value = "";
           document.getElementById("order").value = "";
-
         })
         .catch((error) => {
           alert(
