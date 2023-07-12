@@ -34,13 +34,25 @@ function RequestForm() {
         order: cxOrder,
       };
 
+      // .post("https://khanagi-server.onrender.com/sendData", data)
       axios
-        .post("https://khanagi-server.onrender.com/sendData", data)
+        .post("http://127.0.0.1:5050/sendData", data)
         .then((response) => {
-          console.log(response);
+          console.log(response.status);
+          if (response.status === 200) {
+            alert("Order submitted, thank you!")
+          }
+
+          document.getElementById("fname").value = "";
+          document.getElementById("email").value = "";
+          document.getElementById("phone").value = "";
+          document.getElementById("order").value = "";
+
         })
         .catch((error) => {
-          console.log(error);
+          alert(
+            "Please try placing your order again. Sorry for the inconvenience."
+          );
         });
     }
   };
@@ -165,6 +177,7 @@ function RequestForm() {
         />
         <input
           style={{
+            color: "black",
             gridColumn: "1 / span 2",
             gridRow: "5",
             fontFamily: "Nova Cut, cursive",

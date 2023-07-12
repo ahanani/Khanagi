@@ -4,7 +4,6 @@ import Menu from "./Menu";
 import RequestForm from "./RequestForm";
 
 function MobileView() {
-  const [backgroundOp, setBackgroundOp] = useState("100%");
   const [optionOne, setOptionOne] = useState(false);
   const [optionTwo, setOptionTwo] = useState(false);
 
@@ -25,12 +24,11 @@ function MobileView() {
         optionOne={optionOne}
         setOptionTwo={setOptionTwo}
         optionTwo={optionTwo}
-        setBackgroundOp={setBackgroundOp}
       />
       {optionOne || optionTwo ? (
         options()
       ) : (
-        <div style={{opacity: backgroundOp}}>
+        <div>
           <Menu
             title={"Siders"}
             images={[1, 2, 3, 4, 5]}

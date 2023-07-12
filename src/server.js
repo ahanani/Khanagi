@@ -37,9 +37,9 @@ app.post("/sendData", function (req, res) {
 
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
-      console.log(error);
+      res.send().status(404);
     } else {
-      console.log("Email sent: " + info.response);
+      res.send().status(200);
     }
   });
 });

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import OpenMenu from "./OpenMenu";
 
 function MobileMenu({
-  setBackgroundOp,
   setOptionOne,
   optionOne,
   setOptionTwo,
@@ -13,12 +12,15 @@ function MobileMenu({
   const menuClickListener = () => {
     if (spanContent) {
       setSpanContent(false);
-      setBackgroundOp("50%");
     } else {
       setSpanContent(true);
-      setBackgroundOp("100%");
     }
   };
+
+  const homeMenu = () => {
+    setOptionOne(false);
+    setOptionTwo(false)
+  }
 
   return (
     <div>
@@ -33,6 +35,7 @@ function MobileMenu({
       >
         <h1
           style={{ gridColumn: "3", alignSelf: "center", textAlign: "center" }}
+          onClick={homeMenu}
         >
           Khanagi
         </h1>
@@ -47,6 +50,7 @@ function MobileMenu({
       <div>
         {spanContent ? null : (
           <OpenMenu
+            setSpanContent={setSpanContent}
             setOptionOne={setOptionOne}
             optionOne={optionOne}
             setOptionTwo={setOptionTwo}

@@ -9,6 +9,11 @@ function DesktopMenu({ setOptionOne, optionOne, setOptionTwo, optionTwo }) {
     setOptionTwo(!optionTwo);
   };
 
+  const homeMenu = () => {
+    setOptionOne(false);
+    setOptionTwo(false);
+  };
+
   return (
     <div>
       <div
@@ -20,7 +25,7 @@ function DesktopMenu({ setOptionOne, optionOne, setOptionTwo, optionTwo }) {
           color: "white",
         }}
       >
-        <h1 style={{ gridColumn: "2", alignSelf: "center" }}>Khanagi</h1>
+        <h1 style={{ gridColumn: "2", alignSelf: "center" }} onClick={homeMenu}>Khanagi</h1>
         <p
           style={{ gridColumn: "3", alignSelf: "center", textAlign: "right" }}
           onClick={contactHandler}
