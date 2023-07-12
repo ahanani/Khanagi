@@ -34,7 +34,7 @@ function RequestForm() {
       };
 
       axios
-        .post("http://127.0.0.1:5050/sendData", data)
+        .post("https://khanagi-server.onrender.com/sendData", data)
         .then((response) => {
           console.log(response);
         })
